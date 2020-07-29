@@ -15,6 +15,8 @@ import {
   TextInput,
   Button,
   Text,
+  TouchableHighlight,
+  TouchableOpacity,
   Switch,
   StatusBar,
 } from 'react-native';
@@ -43,16 +45,19 @@ const Login = () => {
               keyboardType='numeric'
               underlineColorAndroid={"transparent"}
               placeholder={"لطفا ایمیل را وارد نمایید."} />
-            <Text style={styles.labelText}>پسوورد :</Text>
+            <Text style={styles.labelText}>رمز عبور :</Text>
             <TextInput style={styles.inputText}
               underlineColorAndroid={"transparent"}
               secureTextEntry={showPassword}
               autoCorrect={false}
-              placeholder={"لطفا پسوورد را وارد نمایید."} />
-            <Switch
+              placeholder={"لطفا رمز را وارد نمایید."} />
+            {/* <Switch
               onValueChange={toggleSwitch}
               value={!showPassword}
-            />
+            /> */}
+            <TouchableHighlight  style={styles.divButton}  onPress={()  => console.log('ddddd')}>
+              <Text style={styles.button}>ورود به اپلیکیشن</Text>
+            </TouchableHighlight>
           </View >
         </View >
       </View >
@@ -72,7 +77,7 @@ const styles = StyleSheet.create({
   loginBox: {
     backgroundColor: "#fff",
     flex: 1,
-    height: 250,
+    height: 300,
     marginRight: 50,
     marginLeft: 50,
     borderRadius: 5,
@@ -82,7 +87,8 @@ const styles = StyleSheet.create({
   },
   loginTitle: {
     textAlign: "center",
-    fontSize: 18,
+    fontFamily: "iranyekanwebbold",
+    fontSize: 14,
     paddingTop: 10,
     paddingBottom: 10
   },
@@ -93,15 +99,31 @@ const styles = StyleSheet.create({
   },
   labelText: {
     textAlign: "right",
+    fontFamily: "iranyekanwebbold",
     marginBottom: 5
   },
   inputText: {
     textAlign: "right",
     borderColor: "rgba(0,0,0, .1)",
+    fontFamily: "iranyekanwebbold",
     borderWidth: 1,
     padding: 10,
     borderRadius: 3,
     marginBottom: 10
+  },
+  button: {
+    marginRight: 25,
+    marginLeft: 25,
+    backgroundColor: "#3F51B5",
+    color: "#fff",
+    fontFamily: "iranyekanwebbold",
+    padding: 4,
+    textAlign: "center",
+    elevation: 2
+  },
+  divButton: {
+    backgroundColor: "#3F51B5",
+    borderRadius: 25
   }
 });
 
